@@ -1,0 +1,112 @@
+.select-main
+    position: relative
+    display: grid
+    grid-template-columns: 1fr
+    grid-row-gap: $gap__xs
+
+    &__header
+        display: grid
+        grid-template-columns: auto 1fr
+        grid-column-gap: $gap__xs
+        align-items: baseline
+
+        .icon__property,
+        .icon__province
+            font-size: 1rem
+
+        .icon__location
+            font-size: 1.05rem
+
+    &__content-wrapper
+        position: relative
+        height: $button-size__s
+        overflow: visible
+        transition: $transition__main
+        z-index: 1
+
+        &:hover
+            z-index: 100
+
+            & > label
+
+                & > input
+                    outline-color: $color__blue
+
+                & > span > i
+                    color: $color__blue
+                    transform: scaleY(-1)
+
+            & > div
+                max-height: calc(4.5rem * 3)
+
+    .input-label__main
+        position: relative
+        background-color: $color__white
+        z-index: 1
+
+        & > input
+            height: calc(#{$button-size__s} - (#{$padding__xxs} * 2))
+            padding-right: calc(#{$el-size__xs} - #{$padding__xxs})
+
+            &:focus::placeholder
+                opacity: 1
+
+        & > span
+            position: absolute
+            right: 0
+            @include flex(center, center, column)
+            height: 100%
+            width: $el-size__xs
+            font-size: .5rem
+
+    .list__main-wrapper
+        top: calc(100% + 1px)
+        width: 100%
+        height: max-content
+        max-height: 0
+        background-color: $color__white
+
+    .list__main
+        height: max-content
+        max-height: inherit
+        overflow: auto
+
+        /* Change scroll bar appearance */
+        /* Works on Firefox */
+        scrollbar-width: thin
+        scrollbar-color: $color__blue $color__white
+
+        /* Works on Chrome, Edge, and Safari */
+        &::-webkit-scrollbar
+            width: 12px
+
+        &::-webkit-scrollbar-track
+            background: $color__white
+
+        &::-webkit-scrollbar-thumb
+            background-color: $color__blue
+            border-radius: 20px
+            border: 3px solid $color__white
+
+        & > li:last-child
+            border: unset
+
+    .select-main__search > .list__main
+        max-height: calc(4.5rem * 3 - #{$search-height})
+
+    .list__main--item
+        position: relative
+        padding: unset
+
+        & > input
+            position: absolute
+            inset: 0
+            opacity: 0
+
+        & > span
+            display: block
+            padding: $padding__xxxs $padding__xxs
+            transition: background-color $transition__main
+
+        & > input:checked ~ span
+            background-color: $color__blue

@@ -1,0 +1,138 @@
+.btn__primary
+    @include button($color__blue-dark, $color__white)
+    &--floting
+        transition: color 1s
+        &:hover
+            color: $color__blue-dark
+            animation: zigzag 1s linear infinite
+            background: linear-gradient(135deg, rgba(99,164,238,0.25) 0.25em, transparent 0.25em) -0.5em 0, linear-gradient(225deg, rgba(99,177,238, 0.25) 0.25em, transparent 0.25em) -0.5em 0, linear-gradient(315deg, rgba(99,125,238, 0.25) 0.25em, transparent 0.25em) 0 0, linear-gradient(45deg, rgba(99,145,238, 0.25) 0.25em, transparent 0.25em) 0 0
+            background-size: 0.75em 0.75em
+            transition: all ease .2s
+            cursor: pointer
+            background-color: $color__green-light
+
+            @keyframes zigzag
+              100%
+                background-position: 1em 0, 1em 0, -0.75em 0 , -0.75em 0
+
+        &:active
+            box-shadow: $shadow__main-hidden, $shadow__main-inset-dark
+            background-color: $color__blue
+            color: $color__white
+
+        &:disabled
+            cursor: not-allowed
+            opacity: .5
+
+            &:hover
+                background-color: $color__white
+
+            &:active
+                box-shadow: unset
+                background-color: $color__white
+    &--bubble
+        transition: color 1s
+        padding: 1rem 1.5rem
+        white-space: nowrap
+        &:hover
+            color: $color__blue-dark
+            animation: pulse 1s ease-in infinite
+            background: radial-gradient(circle, rgb(135, 222, 249) 0.25em, rgba(0, 0, 0, 0) 50%) 0 0/1em 1em, radial-gradient(circle, rgb(135, 190, 249) 43%, rgba(0, 0, 0, 0) 50%) 0.5em 0.5em/2em 2em
+            background-size: 0.75em 0.75em
+            transition: all ease .2s
+            cursor: pointer
+            background-color: $color__green-light
+
+            @keyframes pulse
+                50%
+                    background-position: 0.66em 0.66em, -0.33em -0.33em
+
+                100%
+                    background-size: 2em 2em, 1em 1em
+                    background-position: -1.5em -1.5em, -1em -1em
+        &:active
+            box-shadow: $shadow__main-hidden, $shadow__main-inset-dark
+            background-color: $color__blue
+            color: $color__white
+
+        &:disabled
+            cursor: not-allowed
+            opacity: .5
+
+            &:hover
+                background-color: $color__white
+
+            &:active
+                box-shadow: unset
+                background-color: $color__white
+    &--green
+        transition: color 1s
+        white-space: nowrap
+        background-color: $color__green-light
+        color: $color__black
+        &:hover
+            color: $color__white
+            animation: stripes-move 0.75s infinite linear
+            background-size: 2rem 2rem
+            transition: all ease .2s
+            cursor: pointer
+            background: repeating-linear-gradient(45deg, $color__blue-light 0, $color__blue-dark 0.25em, transparent 0.25em, transparent 0.5em)
+            @keyframes stripes-move
+                100%
+                     background-position: 5em 0
+
+        &:active
+            box-shadow: $shadow__main-hidden, $shadow__main-inset-dark
+            background-color: $color__green-light
+            color: $color__white
+
+        &:disabled
+            cursor: not-allowed
+            opacity: .5
+
+            &:hover
+                background-color: $color__white
+
+            &:active
+                box-shadow: unset
+                background-color: $color__white
+    &--sawtooth
+        transition: color 1s
+        padding: 1rem 1.5rem
+        white-space: nowrap
+        &:hover
+            color: $color__blue-dark
+            animation: sawtooth 0.35s infinite linear
+            background-size: 0.75em 0.75em
+            transition: all ease .2s
+            cursor: pointer
+            background: linear-gradient(45deg, $color__green-light 0.5em, transparent 0.5em) 0 0/1em 1em, linear-gradient(-45deg, $color__green-light 0.5em, transparent 0.5em) 0 0/1em 1em
+            @keyframes sawtooth
+               100%
+                   background-position: 1em 0
+        &:active
+            box-shadow: $shadow__main-hidden, $shadow__main-inset-dark
+            background-color: $color__blue
+            color: $color__white
+
+        &:disabled
+            cursor: not-allowed
+            opacity: .5
+
+            &:hover
+                background-color: $color__white
+
+            &:active
+                box-shadow: unset
+                background-color: $color__white
+.btn__secundary
+    @include button($color__white, $color__blue-dark)
+    padding: 1rem 1.5rem
+    &--icon
+        @include button($color__light-grey, $color__blue-dark)
+        padding: 1rem 1.5rem
+        box-shadow: none
+        & > i
+            margin-left: 0.5rem
+
+

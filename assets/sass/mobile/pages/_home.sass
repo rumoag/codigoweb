@@ -1,0 +1,531 @@
+.home
+
+    &__filter
+        $padding__inputs: calc(#{$padding__xs} - 2px)
+        padding:
+            left: $padding__s
+            right: $padding__s
+
+        &--button
+            position: relative
+            display: grid
+            grid-template-columns: $el-size__xl 1fr
+            height: $el-size__xl
+            width: 100%
+            max-width: calc(#{$el-size__xl} * 3)
+            @include centerX
+            box-shadow: $shadow__main
+            transition: box-shadow $transition__main
+
+            &::before
+                content: ""
+                display: block
+                position: absolute
+                @include pin(0, 0, 0, 0)
+                height: 100%
+                width: 100%
+                transition: box-shadow $transition__main
+
+            &:hover
+
+                .home__filter--button-icon
+                    background-color: $color__black
+                    color: $color__white
+
+                .home__filter--button-text
+                    background-color: $color__blue
+
+            &:active
+                box-shadow: $shadow__main-hidden
+
+                .home__filter--button-icon
+                    background-color: $color__blue
+                    color: $color__white
+
+                &::before
+                    box-shadow: $shadow__main-inset
+
+        &--button-icon,
+        &--button-text
+            @include flex(center, center, row)
+            height: inherit
+
+        &--button-icon
+            background-color: $color__white
+            font-size: 1.5rem
+            transition: $transition__main
+
+        &--button-text
+            background-color: $color__blue
+            text-transform: uppercase
+            transition: $transition__main
+
+        &--menu
+            position: fixed
+            @include pin(0, 0, 0, 0)
+            display: grid
+            grid-template-columns: 1fr
+            grid-template-rows: auto 1fr
+            height: 100vh
+            width: 100%
+            background-color: $color__white
+            overflow: auto
+            z-index: 100
+
+            & > form
+                position: relative
+                height: 100%
+
+        &--menu-header
+            position: sticky
+            top: 0
+            display: grid
+            grid-template-columns: 1fr auto
+            align-items: center
+            height: $header
+            width: 100%
+            background-color: $color__white
+            padding:
+                left: $padding__s
+                right: $padding__s
+            text-align: left
+            z-index: 5
+
+            & > span
+                position: relative
+                @include flex(center, center, column)
+                height: $menu-height
+                width: $menu-width
+
+                & > span
+                    position: absolute
+                    left: 0
+                    height: 2px
+                    background-color: $color__black
+                    transform-origin: center
+                    transition: $transition__main
+
+                & > span:first-child
+                    width: 100%
+                    transform: rotate(45deg) translateY(0)
+
+                & > span:last-child
+                    width: 100%
+                    transform: rotate(-45deg) translateY(0)
+
+        &--menu-list-container
+            position: absolute
+            display: grid
+            grid-template-columns: 1fr
+            grid-template-rows: auto 1fr auto
+            box-sizing: border-box
+            height: 100%
+            width: 100%
+            padding:
+                left: $padding__s
+                right: $padding__s
+
+        &--menu-search-field
+            display: grid
+            grid-template-columns: $el-size__m 1fr
+            padding:
+                top: calc(#{$padding__xxs} + #{$padding__s})
+                bottom: calc(#{$padding__xxs} + #{$padding__s})
+            border-bottom: $border__main $color__grey
+
+            & > span
+                position: relative
+                grid-column: 1 / 2
+                grid-row: 1 / 2
+                @include flex(center, center, row)
+                font-size: 1rem
+                z-index: 2
+
+            & > input
+                grid-column: 1 / 3
+                grid-row: 1 / 2
+                width: calc(100% - #{$padding__xs} * 2)
+                @include centerX
+                padding-left: calc(#{$el-size__m} - #{$padding__xs})
+                outline: $border__main $color__grey
+                outline-offset: $padding__xs
+                transition: outline-color $transition__main
+
+                &:focus
+                    outline-color: $color__blue
+
+        &--menu-list-item
+            border-bottom: $border__main $color__grey
+
+            & > button
+                display: grid
+                grid-template-columns: $el-size__m 1fr
+                height: $el-size__l
+                width: 100%
+                padding-right: $padding__xs
+                transition: $transition__main
+
+                &:hover
+                    background-color: $color__black
+                    color: $color__white
+
+                &:active
+                    background-color: $color__blue
+                    box-shadow: $shadow__main-inset-dark
+
+                &:disabled
+                    opacity: .25
+                    cursor: not-allowed
+
+                &:disabled:hover,
+                &:disabled:active
+                    background-color: $color__white
+                    color: $color__black
+                    box-shadow: unset
+
+                & > span
+                    @include flex(center, center, row)
+                    height: 100%
+                    font-size: 1rem
+
+                &:last-child > span
+                    font-size: 1.1rem
+
+                & > p
+                    text-align: left
+                    @include centerY
+
+        &--menu-sublist-container
+            position: absolute
+            display: grid
+            grid-template-columns: 1fr
+            grid-template-rows: repeat(2, auto) 1fr
+            height: 100%
+            width: 100%
+            background-color: $color__white
+            overflow: hidden
+
+            & > ul
+                height: 100%
+                box-sizing: border-box
+                padding:
+                    left: $padding__s
+                    right: $padding__s
+                    bottom: $padding__xs
+                overflow: auto
+
+                &:nth-child(2)
+                    height: calc(100% - #{$padding__xs})
+                    margin-top: $padding__xs
+
+        &--menu-sublist-return
+            display: grid
+            grid-template-columns: repeat(2, auto) 1fr
+            grid-column-gap: $gap__m
+            height: $el-size__l
+            padding:
+                left: calc(#{$padding__s} + #{$padding__xs})
+                right: calc(#{$padding__s} + #{$padding__xs})
+            background-color: $color__light-grey
+            transition: $transition__main
+
+            & > span
+                @include flex(center, center, row)
+                height: inherit
+
+                &:first-of-type
+                    font-size: 1rem
+
+                &:last-of-type
+                    font-size: 1.25rem
+
+            & > h3
+                text-align: left
+                @include centerY
+
+            &:hover
+                background-color: $color__black
+                color: $color__white
+
+            &:active
+                background-color: $color__blue
+                box-shadow: $shadow__main-inset-dark
+
+        &--menu-sublist-search
+            @include flex(center, center, row)
+            padding:
+                top: calc(#{$padding__xxs} + #{$padding__xs})
+                bottom: calc(#{$padding__xxs} + #{$padding__xs})
+            margin:
+                left: $padding__s
+                right: $padding__s
+
+            & > input
+                grid-column: 1 / 3
+                grid-row: 1 / 2
+                width: calc(100% - #{$padding__xs} * 2)
+                outline: $border__main $color__grey
+                outline-offset: $padding__inputs
+                transition: outline-color $transition__main
+
+                &:focus
+                    outline-color: $color__blue
+
+        &--menu-sublist-prices
+            display: grid
+            grid-auto-flow: row
+            grid-row-gap: $gap__s
+            margin-top: $padding__xs
+
+            & > label
+                padding:
+                    top: $padding__inputs
+                    bottom: $padding__inputs
+
+        &--menu-sublist-item-container
+            border-bottom: $border__main $color__grey
+
+        &--menu-sublist-item
+            position: relative
+            display: block
+            height: $el-size__l
+
+            &::before
+                content: ""
+                display: block
+                position: absolute
+                @include pin(0, 0, 0, 0)
+                height: 100%
+                width: 0
+                background-color: $color__blue
+                transition: $transition__main
+
+            &:hover::before
+                width: 100%
+
+            &:active::before
+                box-shadow: $shadow__main-inset
+
+            & > input
+                position: absolute
+                height: 100%
+                width: 100%
+                opacity: 0
+
+            & > span
+                position: relative
+                @include flex(flex-start, center, row)
+                height: inherit
+                padding:
+                    left: $padding__xs
+                    right: $padding__xs
+                transition: background-color $transition__main
+                z-index: 2
+
+            & > input:checked ~ span
+                background-color: $color__blue
+
+        &--menu-submit
+            position: sticky
+            bottom: 0
+            padding-bottom: $padding__s
+
+            & > button
+                width: 100%
+                max-width: $el-size__xxxl
+                @include centerX
+
+    &__advice
+        margin-top: $padding__l
+        padding:
+            left: $padding__s
+            right: $padding__s
+
+        & > div
+            border: $border__thick $color__grey
+            padding: $padding__xs
+
+    &__properties
+        $nav-button-size: 3.25rem
+        $nav-height: 7.5rem
+        margin:
+            top: $padding__l
+            bottom: $padding__xl
+
+        &--header
+            padding:
+                left: $padding__s
+                right: $padding__s
+            text-align: center
+
+        &--header-buttons
+            @include flex(center, center, row)
+            flex-wrap: wrap
+            max-width: max-content
+            @include centerX
+            margin-top: $gap__l
+
+            & > button
+                position: relative
+                @include flex(center, center, row)
+                width: max-content
+                padding-bottom: $gap__xxs
+                margin:
+                    left: $gap__s
+                    right: $gap__s
+                    bottom: $gap__s
+                transition: color $transition__main
+
+                &::after
+                    position: absolute
+                    bottom: 0
+                    content: ""
+                    display: block
+                    height: 3px
+                    width: 0
+                    background-color: $color__blue
+                    transition: width $transition__main
+
+                &:hover::after,
+                &:disabled::after
+                    width: 103%
+
+                &:active
+                    color: $color__blue
+
+                &:disabled
+                    cursor: not-allowed
+                    color: $color__black
+
+        &--container
+            display: grid
+            grid-template-rows: calc(#{$el-size__xxxl} + #{$padding__m} + #{$padding__s}) 1fr
+
+            &::before
+                content: ""
+                display: block
+                grid-column: 1 / 2
+                grid-row: 2 / 3
+                height: 100%
+                width: 100%
+                background-color: $color__black
+
+        &--swiper
+            display: grid
+            grid-column: 1 / 2
+            grid-row: 1 / 3
+            box-sizing: border-box
+            width: 100%
+            height: max-content
+            padding: $padding__m $padding__s $nav-height
+
+        &--swiper-wrapper
+            height: 100%
+
+        &--item
+            width: 100%
+            height: 100%
+            max-width: $swiper-item__m
+            margin:
+                right: $gap__m
+                left: $gap__m
+
+            & > a
+                box-sizing: border-box
+                display: block
+                width: 100%
+                height: 100%
+                padding: $padding__s
+                background-color: $color__white
+                box-shadow: $shadow__main
+                transition: $transition__main
+
+                &:hover
+                    box-shadow: $shadow__main-hidden
+                    color: $color__white
+                    background-color: $color__black
+
+                &:active
+                    box-shadow: $shadow__main-inset-dark
+                    color: $color__white
+                    background-color: $color__blue
+
+        &--item-img
+            width: 100%
+            margin-bottom: $padding__s
+
+            & > img
+                width: inherit
+                height: $el-size__xxxl
+                object-fit: cover
+                object-position: center
+                margin-bottom: $gap__s
+
+        &--swiper-controls
+            position: absolute
+            @include pin(auto, 0, 0, 0)
+            display: grid
+            grid-template-columns:  1fr auto 1fr
+            grid-column-gap: $gap__l
+            align-items: center
+            height: $nav-height
+            max-width: $swiper-item__m
+            padding:
+                left: $padding__s
+                right: $padding__s
+            margin:
+                left: auto
+                right: auto
+            color: $color__white
+            z-index: 2
+
+            & > .swiper-button-disabled
+                cursor: not-allowed
+                color: $color__blue
+
+                &:hover,
+                &:active
+                    color: $color__blue
+
+        &--prev,
+        &--next
+            font-size: $nav-button-size
+            transition: color $transition__main
+
+            &:hover
+                color: $color__blue
+
+            &:active
+                color: $color__grey
+
+            & > i
+                height: $nav-button-size
+
+        &--prev
+            grid-column: 1 / 2
+            grid-row: 1 / 2
+
+        &--next
+            grid-column: 3 / 4
+            grid-row: 1 / 2
+            margin-left: auto
+
+        &--pagination
+            grid-column: 2 / 3
+            grid-row: 1 / 2
+
+            & > .swiper-pagination-current
+                font-size: 1.75rem
+                font-weight: 600
+
+    &__how-we-work
+        padding:
+            left: $padding__s
+            right: $padding__s
+
+        & > h2
+            text-align: center
+            margin-bottom: $padding__m
+
+        & > p
+            margin-bottom: $gap__s

@@ -1,0 +1,32 @@
+.menu-enter-active, .menu-enter
+    @include animation(openMenuFromRight, .5s, forwards)
+
+.menu-leave-active, .menu-leave-to
+    @include animation(closeMenuToRight, .5s, forwards)
+
+.filter-right-left-enter-active, .filter-right-left-enter
+    @include animation(openMenuFromRight, .5s, forwards)
+
+.filter-right-left-leave-active, .filter-right-left-leave-to
+    @include animation(closeMenuToLeft, .5s, forwards)
+
+.filter-left-right-enter-active, .filter-left-right-enter
+    @include animation(openMenuFromLeft, .5s, forwards)
+
+.filter-left-right-leave-active, .filter-left-right-leave-to
+    @include animation(closeMenuToRight, .5s, forwards)
+
+/* New client types menu transition classes for programmatic transitions
+.open-add-new-client-before-enter
+    transform: translateX(100%)
+
+.open-add-new-client-enter
+    @include animation(openMenuFromRight, .5s, forwards)
+
+.open-close-add-new-client-leave
+    @include animation(closeMenuToRight, .5s, forwards)
+
+.next-add-new-client-leave
+    @include animation(closeMenuToLeft, .5s, forwards)
+
+/* open client form

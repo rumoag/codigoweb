@@ -1,0 +1,126 @@
+@mixin pin($top, $right, $bottom, $left)
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $left
+
+@mixin flex($justify, $align, $direction)
+    display: flex
+    justify-content: $justify
+    align-items: $align
+    flex-direction: $direction
+
+@mixin bgImg($url, $position, $size, $repeat)
+    background-image: url($url)
+    background-position: $position
+    background-size: $size
+    background-repeat: $repeat
+
+@mixin animation($name, $duration, $fill)
+    animation-name: $name
+    animation-duration: $duration
+    animation-timing-function: ease-in-out
+    animation-fill-mode: $fill
+
+@mixin centerX
+    margin:
+        right: auto
+        left: auto
+
+@mixin centerY
+    margin:
+        top: auto
+        bottom: auto
+
+@mixin icon($utf)
+    font-family: "icons", sans-serif
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    width: 24px
+    height: 24px
+
+    &::before
+        content: $utf
+        speak: none
+        font-size: 100%
+        font-style: normal
+        font-weight: normal
+        font-variant: normal
+        text-transform: none
+        -webkit-font-smoothing: antialiased
+        -moz-osx-font-smoothing: grayscale
+        padding:
+            left: 1px
+            right: 1px
+
+@mixin darkTransparentBg()
+    position: fixed
+    display: grid
+    @include pin(-$padding__m, 0, $padding__m, 0)
+    box-sizing: border-box
+    height: calc(100vh + #{$padding__m} * 2)
+    width: 100vw
+    background-color: rgba($color__black, .75)
+    backdrop-filter: blur(5px)
+    -webkit-backdrop-filter: blur(5px)
+    overflow: auto
+    z-index: 100
+
+@mixin closeBg()
+    position: absolute
+    @include pin(0, 0, 0, 0)
+    height: inherit
+    width: inherit
+    cursor: url('../img/close.png') 4 12, pointer
+    z-index: 1
+
+@mixin buttonClose()
+    position: relative
+    height: $el-size__s
+    @include flex(flex-end, center, row)
+
+    &::before,
+    &::after
+        position: absolute
+        content: ""
+        display: block
+        height: 2px
+        width: $el-size__xs
+        background-color: $color__black
+        transform-origin: center
+        transition: background-color $transition__main
+
+    &::before
+        transform: rotate(45deg)
+
+    &::after
+        transform: rotate(-45deg)
+
+    &:hover::before,
+    &:hover::after
+        background-color: $color__blue
+
+    &:active::before,
+    &:active::after
+        background-color: $color__grey
+@mixin button($back, $color)
+    font-weight: 600
+    font-size: 14px
+    text-transform: uppercase
+    line-height: 100%
+    background-color: $back
+    box-shadow: $shadow__main
+    @include flex(center, center, row)
+    min-width: 3.5rem
+    width: fit-content
+    height: 3.5rem
+    padding: $padding__xs
+    border-radius: calc(3.5rem/2)
+    box-sizing: border-box
+    color: $color
+
+
+
+
+

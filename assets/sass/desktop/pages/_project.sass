@@ -1,0 +1,50 @@
+.project-landing
+    &__background
+        position: relative
+        & > img
+            position: absolute
+            @include pin(0,0,0,auto)
+            z-index: -1
+            object-fit: cover
+            height: 90vh
+    &__container
+        @include flex(flex-end,initial, column)
+        height: 80vh
+    &__text
+        display: grid
+        margin-bottom: 6rem
+        max-width: 48.25rem
+    &__title
+        height: 5rem
+        @include flex(center,initial,column)
+.project-problem,.project-goals, .project-research, .project-product, .project-brand, .project-solution, .project-style, .project-next
+    &__block
+        display: grid
+        max-width: 48.25rem
+        grid-row-gap: 1rem
+        &-mt
+            margin-top: 6rem
+        &-mb
+            margin-bottom: 6rem
+.project-product
+    background-color: $color__light-grey
+.project-brand
+    background-color: $color__green-light
+.project-solution
+    background-color: $color__blue
+    color: $color__white
+.project-contact
+    &__container
+        @include flex(center,center,column)
+        text-align: center
+        height: 40rem
+    &__text
+        width: 39.75rem
+        margin-bottom: 2rem
+.project-next
+    &__container
+        @include flex(center,flex-start,column)
+        height: 24rem
+.project-img
+    margin-top: 3rem
+    border-radius: .5rem

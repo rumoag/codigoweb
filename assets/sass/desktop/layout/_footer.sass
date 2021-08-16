@@ -1,0 +1,45 @@
+.footer
+    position: relative
+    &__email
+        height: 28rem
+        background-color: $color__black
+        color: $color__white
+        width: 100%
+        border-radius: .5rem
+        @include flex(center,center,column)
+    &__titbut
+        text-align: center
+        & > h5
+            margin-bottom: .75rem
+
+    &__icon
+        @include flex(center,center,row)
+        margin-top: 6rem
+    &__links
+        margin-top: 8rem
+        padding-bottom: 2rem
+        @include flex(space-between, center, row)
+    &__rrss
+        &-flex
+            display: grid
+            grid-template-columns: repeat(3,1fr)
+            grid-column-gap: 1rem
+    &__background
+        position: absolute
+        height: 27rem
+        width: 100%
+        background-color: $color__light-grey
+        z-index: -1
+        bottom: 0
+.rodar
+    animation: rodar 1.5s infinite linear
+    display: inline-flex
+    height: 28px
+    @keyframes rodar
+        0%
+             transform: rotateZ(0deg)
+        100%
+             transform: rotateZ(360deg)
+
+
+

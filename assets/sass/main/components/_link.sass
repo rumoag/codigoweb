@@ -1,0 +1,38 @@
+.link__yellow
+    position: relative
+    @include flex(center, center, row)
+    box-sizing: border-box
+    height: $el-size__s
+    font-weight: 400
+    font-size: .8rem
+    z-index: 1
+
+    &::before
+        position: absolute
+        @include pin(0, auto, 0, 0)
+        content: ""
+        display: block
+        height: 100%
+        width: 0
+        background-color: rgba($color__blue, .25)
+        transition: $transition__main
+        z-index: 0
+
+    &:hover::before
+        width: 100%
+
+    &:active::before
+        box-shadow: $shadow__small-inset
+
+.link__simple,
+.link__simple-underlined
+    transition: color $transition__main
+
+    &:hover
+        color: $color__blue
+
+    &:active
+        color: $color__grey
+
+.link__simple-underlined
+    text-decoration: underline

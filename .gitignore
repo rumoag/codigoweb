@@ -1,0 +1,21 @@
+.idea/*
+venv/
+
+### Python template
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+### Static files
+# Static folder content
+static/*
+# Media files content
+media/*
+# node_modules
+node_modules/*
+
+myvenv
+db.sqlite3
+

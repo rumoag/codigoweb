@@ -1,0 +1,40 @@
+.list__main-wrapper
+    position: absolute
+    box-shadow: $shadow__main
+    overflow: hidden
+    transition: $transition__main
+
+.list__main
+    box-sizing: border-box
+    display: grid
+    grid-auto-flow: row
+    padding: $padding__xxxs $padding__xs
+
+    & > li
+        display: flex
+        border-bottom: $border__main $color__grey
+
+    &--item
+        position: relative
+        box-sizing: border-box
+        text-align: left
+        width: 100%
+        padding: $padding__xxxs $padding__xxs
+        z-index: 1
+
+        &::before
+            content: ""
+            display: block
+            position: absolute
+            @include pin(0, auto, 0, 0)
+            height: 100%
+            width: 0
+            background-color: $color__blue
+            transition: $transition__main
+            z-index: -1
+
+        &:hover::before
+            width: 100%
+
+        &:active::before
+            box-shadow: $shadow__main-inset

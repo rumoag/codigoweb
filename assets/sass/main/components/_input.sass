@@ -1,0 +1,171 @@
+input
+    font-family: "text", sans-serif
+
+    &::placeholder
+        color: $color__grey
+        opacity: 1
+        transition: opacity $transition__main
+
+    &:focus::placeholder
+        opacity: 0
+
+.input-label__main,
+.input-label__icon,
+.input-label__narrow
+    position: relative
+    display: grid
+    grid-auto-flow: row
+    grid-row-gap: $gap__xs
+
+    &--label
+        display: grid
+        grid-template-columns: minmax(max-content, 1fr) auto
+        grid-column-gap: $gap__s
+        align-items: self-end
+        padding:
+            left: $padding__xxs
+            right: $padding__xxs
+
+    & > input
+        box-sizing: border-box
+        outline: $border__main $color__grey
+        @include centerX
+        transition: outline-color $transition__main
+
+        &:focus
+            outline-color: $color__blue
+
+    & > span > i
+        transition: $transition__main
+
+    .input__error
+        outline-color: $color__red
+
+    .errorlist
+        text-align: right
+
+.input-label__main,
+.input-label__icon
+
+    & > input
+        width: calc(100% - #{$padding__xxs} * 2)
+        outline-offset: $padding__xxs
+        margin:
+            top: $padding__xxs
+            bottom: $padding__xxs
+
+.input-label__icon
+    grid-template-columns: 1fr $el-size__s
+
+    & > span
+        grid-column: 1 / 3
+        grid-row: 1 / 2
+
+    & > input
+        grid-column: 1 / 3
+        grid-row: 2 / 3
+        padding-right: $el-size__s
+
+    & > button
+        position: relative
+        @include flex(flex-start, center, row)
+        grid-column: 2 / 3
+        grid-row: 2 / 3
+        font-size: 1.3rem
+        transition: color $transition__main
+
+        & > i
+            position: absolute
+            transition: opacity $transition__main
+
+        &:hover
+            color: $color__blue
+
+        &:active
+            color: $color__grey
+
+        &:invalid
+            outline-color: red
+
+.input-label__narrow > input
+    width: calc(100% - #{$padding__xxs})
+    outline-offset: calc(#{$padding__xxs} / 2)
+    margin:
+        top: calc(#{$padding__xxs} / 2)
+        bottom: calc(#{$padding__xxs} / 2)
+    padding:
+        left: calc(#{$padding__xxs} / 2)
+        right: calc(#{$padding__xxs} / 2)
+
+.input-label__checkbox
+    position: relative
+    display: grid
+    grid-template-columns: auto 1fr
+    grid-column-gap: $gap__xs
+    align-items: flex-start
+
+    & > input
+        position: absolute
+        @include pin(0, 0, 0, 0)
+        height: 100%
+        width: 100%
+        z-index: 2
+
+    &--icon
+        position: relative
+        @include flex(center, center, row)
+        font-size: 1rem
+        transition: color $transition__main
+
+        & > i
+            transition: opacity $transition__main
+
+        & > .icon__box-checked
+            position: absolute
+            opacity: 0
+
+    &:hover > &--icon
+        color: $color__blue
+
+    &:active > &--icon
+        color: $color__grey
+
+    & > input:checked ~ &--icon
+
+        & > .icon__box
+            opacity: 0
+
+        & > .icon__box-checked
+            opacity: 1
+
+.input__password
+    padding-right: $padding__s
+
+.button__password
+    position: absolute
+    @include pin(auto, 0, 0, auto)
+    height: $button-password
+    width: calc(#{$padding__s} + #{$padding__xxs})
+    @include flex(center, center, row)
+    font-size: 1.25rem
+    transition: color $transition__main
+
+    &:hover
+        color: $color__blue
+
+    &:active
+        color: $color__grey
+
+    & > i
+        position: absolute
+        transition: opacity $transition__main
+
+.input__error .icon__box
+    color: $color__red
+
+.errorlist
+    height: auto
+    color: $color__red
+    font-weight: 400
+    font-size: .75rem
+    line-height: 125%

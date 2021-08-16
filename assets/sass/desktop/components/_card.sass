@@ -1,0 +1,40 @@
+// card styles for desktop
+.card
+  height: 20rem
+  width: 100%
+  box-sizing: border-box
+  @include flex(center,center,column)
+  &__header
+    @include flex(center, center,row)
+    text-align: center
+    margin-bottom: 1rem
+    & > i
+      width: 3rem
+      height: 3rem
+      font-size: 2.5rem
+      overflow: hidden
+  &__body
+    @include flex(center, center,column)
+    text-align: center
+    & > h5
+      margin: 0 0 .5rem 0
+    & > p
+      padding: 0 1.5rem
+.fiche
+  height: 16rem
+  background-color: $color__light-grey
+  border-radius: .5rem
+  padding: 1.5rem
+  box-sizing: border-box
+  &__text
+    & > h6
+      margin-bottom: 1.5rem
+    & > h5
+      margin: 0
+    & > i
+      width: 40px
+      height: 40px
+      color: $color__green-light
+      font-size: 2rem
+      margin-top: 2rem
+      margin-bottom: 1rem

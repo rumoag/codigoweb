@@ -1,0 +1,82 @@
+.footer
+    position: relative
+    margin-top: $padding__l
+    padding: $padding__s
+    display: grid
+    grid-template-columns: 1fr
+    grid-row-gap: $gap__xl
+
+    @media screen and (min-width: $breakpoint__m)
+        grid-template-columns: repeat(2, 1fr)
+        grid-column-gap: $gap__m
+
+    &::before
+        position: absolute
+        top: 0
+        left: $padding__s
+        content: ""
+        display: block
+        height: 1px
+        width: calc(100% - #{$padding__s} * 2)
+        background-color: $color__blue
+
+    &__list-properties,
+    &__list-address,
+    &__list-info
+
+        h4
+            margin-bottom: $gap__s
+
+        p, li
+            margin-top: $gap__xs
+
+        a
+            transition: color $transition__main
+
+            &:hover
+                color: $color__blue
+
+            &:active
+                color: $color__blue
+
+    &__list-info-group
+        display: grid
+        grid-template-columns: 1fr
+        grid-template-rows: repeat(2, auto)
+        grid-row-gap: $gap__xl
+        height: max-content
+
+    &__list-address
+
+        address
+            font-style: normal
+
+    &__email
+        margin-bottom: $gap__m
+
+        & > a
+            font-size: .83rem
+            vertical-align: -0.09rem
+
+    &__list-img
+        $img-size: 2.5rem
+        display: grid
+        grid-template-columns: 1fr
+        grid-row-gap: $gap__m
+        height: max-content
+
+        @media screen and (min-width: $breakpoint__m)
+            grid-column: 1 / 3
+
+        & > article
+            display: grid
+            grid-template-columns: auto 1fr
+            grid-column-gap: $gap__m
+            height: max-content
+
+            & > img
+                width: $img-size
+
+            & > p
+                height: max-content
+                @include centerY

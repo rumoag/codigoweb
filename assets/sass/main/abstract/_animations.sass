@@ -1,0 +1,40 @@
+@keyframes bounceUp
+    0%
+        transform: translateY(0)
+        opacity: 1
+    25%
+        transform: translateY($padding__m)
+    100%
+        transform: translateY(-7rem)
+        opacity: 0
+
+@keyframes bounceFromDown
+    0%
+        transform: translateY(7rem)
+        opacity: 0
+    75%
+        transform: translateY(-$padding__m)
+    100%
+        transform: translateY(0)
+        opacity: 1
+
+@keyframes bounceToDown
+    0%
+        transform: translateY(0)
+        opacity: 1
+    25%
+        transform: translateY(-$padding__m)
+    100%
+        transform: translateY(7rem)
+        opacity: 0
+
+@keyframes slideDown
+    0%
+        transform: translateY(-7rem)
+        opacity: 0
+    100%
+        transform: translateY(0)
+        opacity: 1
+
+.bounce-up
+    @include animation(bounceUp, .3s, forwards)

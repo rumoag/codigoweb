@@ -1,0 +1,12 @@
+http://rubenmoya.localhost:9000
+
+encode gzip zstd
+
+root * "/mnt/d/Users/Rubén Moya Agustín/Documents/personal/codigoweb"
+
+@notStatic {
+  not path /static/* /media/*
+}
+reverse_proxy @notStatic 127.0.0.1:8000
+
+file_server
