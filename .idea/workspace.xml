@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e23346f-f92f-44e8-893b-1ddbba8c24f2" name="Default Changelist" comment="" />
+    <list default="true" id="6e23346f-f92f-44e8-893b-1ddbba8c24f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/webruben/templates/pages/project_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webruben/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webruben/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/webruben/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webruben/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webruben/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webruben/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webruben/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +40,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/webruben" />
   </component>
   <component name="JupyterTrust" id="2f10df5b-e909-48b7-b86c-82ca9d578663" />
   <component name="ProjectId" id="1vRGF9iHRKDwheyN3x1mo5wPc3K" />
@@ -90,7 +96,7 @@
       <workItem from="1627990233844" duration="3546000" />
       <workItem from="1628090556646" duration="6758000" />
       <workItem from="1628172685156" duration="662000" />
-      <workItem from="1629130579791" duration="3172000" />
+      <workItem from="1629130579791" duration="3579000" />
     </task>
     <servers />
   </component>
