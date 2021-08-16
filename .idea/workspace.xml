@@ -20,7 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e23346f-f92f-44e8-893b-1ddbba8c24f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/webruben/migrations/0002_project.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webruben/migrations/0003_alter_project_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webruben/migrations/0004_auto_20210731_1337.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webruben/templates/_footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webruben/templates/_header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webruben/templates/layouts/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webruben/templates/pages/home.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/webruben/templates/pages/project_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webruben" beforeDir="false" afterPath="$PROJECT_DIR$/webruben" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webruben/.gitattributes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webruben/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/webruben/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webruben/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webruben/models.py" afterDir="false" />
@@ -40,7 +48,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/webruben" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="2f10df5b-e909-48b7-b86c-82ca9d578663" />
   <component name="ProjectId" id="1vRGF9iHRKDwheyN3x1mo5wPc3K" />
@@ -96,7 +104,7 @@
       <workItem from="1627990233844" duration="3546000" />
       <workItem from="1628090556646" duration="6758000" />
       <workItem from="1628172685156" duration="662000" />
-      <workItem from="1629130579791" duration="3579000" />
+      <workItem from="1629130579791" duration="4010000" />
     </task>
     <servers />
   </component>
